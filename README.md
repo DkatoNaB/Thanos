@@ -17,3 +17,11 @@ v2.0
 - A GUI should be given
 - Multiple buttons to decide fates and and extra Browse option to select the judgement file
 
+
+Useage:
+make sure that you have CXX export-ed, sample: export CXX=/usr/bin/clang++
+./fk.sh
+./thanous.out
+
+
+
