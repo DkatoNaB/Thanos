@@ -18,16 +18,15 @@ public:
     auto sepAt  = email.find( "@" );
     auto sepDot = email.find( "." );
     mEmail = email;
-    mName  = email.substr( 0, sepAt ).substr( 0, sepDot)
-           + " " 
-           + email.substr( sepDot, sepAt);
+    mName  = email.substr( 0, sepAt ).replace(sepDot, 1, " ");
+
   }
   
   // TODO: move ctor
 
   friend std::ostream& operator<<(std::ostream& out, const Person& o)
   {
-    out << " name:"  << o.mName << std::endl;
+    out << " name: " << o.mName  << std::endl;
     out << "email: " << o.mEmail << std::endl;
     return out;
   }

@@ -49,7 +49,7 @@ bool CollectiveLogic::Menu()
   {
     case 1:
     {
-      std::cout << "menu pont 1 choosen, please give the name or email!" << std::endl;
+      std::cout << std::endl << "menu pont 1 choosen, please give the name or email!" << std::endl;
       std::cin >> NameEmailOrFIle;
       return RunMenuPointOne( NameEmailOrFIle );
     }
@@ -76,7 +76,7 @@ bool CollectiveLogic::RunMenuPointOne(std::string& email)
 {
   AddTargetsByEmail( email );
   PrintTargets();
-  
+   
   return ExitMessage();
 }
 
