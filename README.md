@@ -21,16 +21,11 @@ v2.0
 Useage:
 make sure that you have CXX export-ed, sample: export CXX=/usr/bin/clang++
 
+mkdir build && cd build
+cmake ..
+make
 
-Issue these 2 commands
-
-
-./fk.sh
-
-
-cd build 
-
-./thanous.out
+Now, you have thanos as executeable!
 
 
 
