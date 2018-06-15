@@ -20,7 +20,16 @@ v2.0
 
 Useage:
 make sure that you have CXX export-ed, sample: export CXX=/usr/bin/clang++
+
+
+Issue these 2 commands
+
+
 ./fk.sh
+
+
+cd build 
+
 ./thanous.out
 
 
