@@ -2,4 +2,4 @@
 build/
 # adding bin directory to be ignored
 bin/
-
+*.swp
