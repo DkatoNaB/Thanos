@@ -45,7 +45,7 @@ bool CollectiveLogic::Menu()
   // Sample: if user pushed 1, then email or address wil be given
   std::string NameEmailOrFIle;
 
-  switch( menuPoint )
+  switch ( menuPoint )
   {
     case 1:
     {
@@ -56,10 +56,10 @@ bool CollectiveLogic::Menu()
     case 2:
     {
       // list process n shit
-      std::cout << "menu pont 2 choosen in TODO pahse!" << std::endl;
-      //std::cin >> NameEmailOrFIle;
+      std::cout << "menu pont 2 choosen giveme text list!" << std::endl;
+      std::cin >> NameEmailOrFIle;
       // TODO: implement
-      return RunMenuPointTwo( NameEmailOrFIle );
+      return RunMenuPointTwo( NameEmailOrFIle ) ;
     }
     default: return false;
   }
@@ -80,8 +80,21 @@ bool CollectiveLogic::RunMenuPointOne(std::string& email)
   return ExitMessage();
 }
 
-bool CollectiveLogic::RunMenuPointTwo(std::string& filename)
+bool CollectiveLogic::RunMenuPointTwo(const std::string& filename)
 {
+  std::ifstream nameList;
+  std::string name; //TODO: get rid of this temp str
+  nameList.open(filename);
+  if ( nameList.is_open() )
+  {
+     while ( nameList >> name )
+    {
+      mTargets.emplace_back( name );
+    }
+  }
+  else
+  {    std::cout << "fk off" << filename << std::endl; return false; }
+  PrintTargets();
   return ExitMessage();
 }
 

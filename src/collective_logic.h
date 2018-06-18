@@ -2,11 +2,13 @@
 #define _COLLECTIVE_LOGIC_H
 
 #include <iostream>
+#include <fstream>
 #include <map>
 #include <string>
 #include <vector>
 
 #include "person.hpp"
+#include "logger.hpp"
 
 class CollectiveLogic
 {
@@ -30,7 +32,7 @@ public:
   void PrintTargets();
   void PrintResults();
   bool RunMenuPointOne(std::string&);
-  bool RunMenuPointTwo(std::string&);
+  bool RunMenuPointTwo(const std::string&);
   void ShowStat();
   //helper functions; operators
 //  friend std::ostream& operator<<(std::ostream& out, const Person& o)

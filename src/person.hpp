@@ -13,7 +13,7 @@ class Person
 public:
   
   // sample input: kappa.KEEPO@xd.com
-  Person(std::string& email) 
+  explicit Person(std::string& email) 
   {
     auto sepAt  = email.find( "@" );
     auto sepDot = email.find( "." );
