@@ -1,9 +1,6 @@
 #ifndef _PERSON_HPP
 #define _PERSON_HPP
 
-#include<string>
-#include<iostream>
-
 class Person
 {
 
@@ -13,13 +10,18 @@ class Person
 public:
   
   // sample input: kappa.KEEPO@xd.com
-  explicit Person(std::string& email) 
+  explicit Person(const std::string& email) 
   {
     auto sepAt  = email.find( "@" );
     auto sepDot = email.find( "." );
-    mEmail = email;
-    mName  = email.substr( 0, sepAt ).replace(sepDot, 1, " ");
 
+    if ( sepAt && sepDot )
+    {
+      mEmail = email;
+      mName  = email.substr( 0, sepAt ).replace(sepDot, 1, " ");
+    }
+    else
+      std::cerr << "Something is not quite right! Wrong is given!" << std::endl;
   }
   
   // TODO: move ctor

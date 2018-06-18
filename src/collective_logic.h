@@ -1,21 +1,13 @@
 #ifndef _COLLECTIVE_LOGIC_H
 #define _COLLECTIVE_LOGIC_H
 
-#include <iostream>
-#include <fstream>
-#include <map>
-#include <string>
-#include <vector>
-
-#include "person.hpp"
-#include "logger.hpp"
-
 class CollectiveLogic
 {
   std::vector< Person > mTargets;
   
-  
-  void AddTargetsByEmail( std::string& );
+  void AddTargetsByEmail( const std::string& );
+  bool DeadOrAlive() const;
+
   // private members
 public:
   CollectiveLogic();
@@ -29,11 +21,11 @@ public:
   bool ExitMessage() const;
   bool Menu();
   // print targets
-  void PrintTargets();
-  void PrintResults();
-  bool RunMenuPointOne(std::string&);
+  void PrintTargets() const;
+  void PrintResults() const;
+  bool RunMenuPointOne(const std::string&);
   bool RunMenuPointTwo(const std::string&);
-  void ShowStat();
+  void ShowStat() const;
   //helper functions; operators
 //  friend std::ostream& operator<<(std::ostream& out, const Person& o)
 

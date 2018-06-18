@@ -1,5 +1,3 @@
-#include "collective_logic.h"
-
 CollectiveLogic::CollectiveLogic() 
 {
 }
@@ -8,7 +6,7 @@ CollectiveLogic::~CollectiveLogic()
 {
 }
 
-void CollectiveLogic::AddTargetsByEmail( std::string& email )
+void CollectiveLogic::AddTargetsByEmail( const std::string& email )
 {
   mTargets.emplace_back( Person( email ) ); 
 }
@@ -59,20 +57,20 @@ bool CollectiveLogic::Menu()
       std::cout << "menu pont 2 choosen giveme text list!" << std::endl;
       std::cin >> NameEmailOrFIle;
       // TODO: implement
-      return RunMenuPointTwo( NameEmailOrFIle ) ;
+      return RunMenuPointTwo( NameEmailOrFIle );
     }
     default: return false;
   }
 }
 
-void CollectiveLogic::PrintTargets()
+void CollectiveLogic::PrintTargets() const 
 {
   for ( auto& person : mTargets )
     std::cout << person;
 }
 
 
-bool CollectiveLogic::RunMenuPointOne(std::string& email)
+bool CollectiveLogic::RunMenuPointOne(const std::string& email)
 {
   AddTargetsByEmail( email );
   PrintTargets();

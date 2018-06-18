@@ -1,7 +1,4 @@
-#include <iostream>
-
-//#include "collective_logic.h"
-#include "collective_logic.cpp"
+#include "all.cpp"
 
 int main()
 {
